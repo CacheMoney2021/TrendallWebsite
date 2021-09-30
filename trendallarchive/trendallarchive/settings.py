@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'trendallarchive.wsgi.application'
 #connect django to db
 DATABASES = {
      'default': {
-         'ENGINE': 'sql_server.pyodbc', 
+         'ENGINE': 'mssql', 
          'NAME': 'trendalldb',
          'USER': 'trenadmin',
          'PASSWORD': 'Latrobe!',
