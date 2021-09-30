@@ -20,7 +20,7 @@ mysql-connector-python==8.0.25
 mysqlclient==2.0.3
 node==0.9.26
 odict==1.7.0
-optional-django==0.1.0
+optional-django==0.3.0
 platformdirs==2.0.2
 plumber==1.6
 psycopg2==2.9.1
