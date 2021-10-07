@@ -1,0 +1,43 @@
+<!--  src="images/image2.jpg" -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trendall Archive image overlay</title>
+    <link rel="stylesheet" href="viewVase.css" />
+  </head>
+  <body>
+
+
+
+ <button onclick="goback()">&#8592;</button> 
+    <!--  Image slider -->
+    <div class="slider">
+        <div class="img-box">
+         <img src = "images\image1.png" alt="" class="slider-img" onclick="enlargeImage()" id="img1" onclick ="resetImg()"> 
+        </div>
+
+    <div class="container">
+        <img class="leagues" src="images\image1.png" alt="" id="pic_left" onclick="mainImg()">
+        <img class="leagues" src="images\image2.png" alt="" id="pic_middle" onclick="mainImg()">
+        <img class="leagues" src="images\image3.png" alt="" id="pic_right" onclick="mainImg()">
+        <!--form>
+            <input type="button" onclick="swap();">  &#8594 first try
+            <input onclick="swap()">&#8594;</input> second try
+        </form>  --> 
+        <button onclick="swap()">&#8594;</button>
+
+   </div>
+
+    <a href="#" onclick="prev()">&laquo;</a>
+    <a href="#" onclick="next()">&raquo;</a>
+   
+     
+    </div>
+
+     <script src="viewVase.js"></script>
+    <!--  <script src = "{% static "frontend/main.js" %}"></script> --> 
+  </body>
+</html>
