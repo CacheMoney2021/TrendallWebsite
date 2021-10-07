@@ -17,10 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
     
-      - name: Runserver
+      - name: NPM
         run: |
-          py manage.py runserver
-        working-directory: ./trendallarchive
+          npm install
+          npm run build --if-present
+        working-directory: ./trendallarchive/frontend
 
       - name: Set up Python version
         uses: actions/setup-python@v1
