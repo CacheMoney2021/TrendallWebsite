@@ -39,7 +39,7 @@ const getImg = (vaseRef)=>{
       plateRef:''
   })
   useEffect(()=>{
-    axios.get(`/api/getplate/?vase=${vaseRef}`)//get the selected vase using the vaseID passed through the URL
+    axios.get(`http://127.0.0.1:8000/getplate/?vase=${vaseRef}`)//get the selected vase using the vaseID passed through the URL
         .then(res=>{
             console.log('Response from main API: ',res) //printing the response to the console
             let plateData=res.data[0]; //add data to vaseData, then assign into each variable

@@ -32,7 +32,7 @@ const Vase=()=>{
         Provenance:''
     })
     useEffect(()=>{
-        axios.get(`/api/getthevase/?vaseRef=${vaseRef}`)//get the selected vase using the vaseRef passed through the URL
+        axios.get(`http://127.0.0.1:8000/getthevase/?vaseRef=${vaseRef}`)//get the selected vase using the vaseRef passed through the URL
             .then(res=>{
                 console.log({vaseRef})
                 console.log('Response from main API: ',res) //printing the response to the console

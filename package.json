@@ -2,6 +2,8 @@
   "name": "trendallarchive",
   "homepage": ".",
   "version": "1.0.0",
+  "private": true,
+  "proxy": "http://localhost:8000",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -37,9 +39,11 @@
     "babel-preset": "^1.1.7",
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
+    "heroku": "^7.59.0",
+    "heroku-cli": "^7.0.9",
     "react-alice-carousel": "^2.5.1",
+    "react-router": "^5.2.1",
     "react-router-dom": "^5.2.0",
-    "styled-components": "^5.3.0",
-    "react-router": "^5.2.1"
+    "styled-components": "^5.3.0"
   }
 }
