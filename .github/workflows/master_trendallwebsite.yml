@@ -53,6 +53,16 @@ jobs:
         with:
           name: python-app
           path: .
+      - name: Runserver
+        run: |
+          cd trendallarchive
+          py manage.py runserver
+          
+      - name: Npm
+        run: |
+          cd trendallarchive
+          cd frontend
+          npm run dev
           
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
