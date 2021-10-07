@@ -7,10 +7,10 @@ const SearchResults = () => {
     const [Data, setData]=useState([])
 
     const urlPath = window.location.href;
-    const pathname = urlPath.replace("http://127.0.0.1:8000/search/", "");
+    const pathname = urlPath.replace("/search/", "");
   
     useEffect(() => {
-      axios.get(`http://127.0.0.1:8000/api/searchresults/${pathname}`)
+      axios.get(`/api/searchresults/${pathname}`)
           .then((res) => {
               console.log(res.data)
               setData(res.data)
@@ -26,7 +26,7 @@ const SearchResults = () => {
             <ul className="card-grid">
                 {Data.map((item) => (
                     <li>
-                        <a href ={`http://127.0.0.1:8000/viewvase/?vaseRef=${item.vaseRef}`} text-decoration="none">
+                        <a href ={`/viewvase/?vaseRef=${item.vaseRef}`} text-decoration="none">
                         <article className="card" key={item.vaseRef}>
                             <div className="card-image">
 

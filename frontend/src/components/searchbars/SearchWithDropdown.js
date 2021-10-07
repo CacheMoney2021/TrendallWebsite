@@ -104,7 +104,7 @@ const SearchWithDropdown = () => {
         />
 
         {/* Basic Search Button */}
-        <IconButton type="submit" className={classes.iconButton} aria-label="search" href ={`http://127.0.0.1:8000/search/?${field}=${input}`}>
+        <IconButton type="submit" className={classes.iconButton} aria-label="search" href ={`/search/?${field}=${input}`}>
           <SearchIcon/>
         </IconButton> 
 
