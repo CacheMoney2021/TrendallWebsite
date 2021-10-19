@@ -2,7 +2,7 @@
 /*Styled Components for the Header/NavBar of the Trendall Archive*/
 //https://styled-components.com/docs
 import styled from 'styled-components';
-import TrendallLogoP from '../images/trendall_logo.png';
+import TrendallLogoP from '../../assets/trendall_logo.png';
 
 //The header template at the top of the website and wraps around the logo and the navbar
 export const Header = styled.div`
