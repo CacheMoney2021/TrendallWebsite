@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { IconButton } from '@material-ui/core';
-import BackIcon from '../images/backarrow_brown.png';
-import { useHistory } from 'react-router-dom';
+import { Icon } from '@iconify/react';
+import arrowBack from '@iconify/icons-eva/arrow-back-fill';
+
+//-------------------------------------------------------------
 
 const useBtnStyles = makeStyles((theme) => ({
   iconButton: {
@@ -12,17 +15,15 @@ const useBtnStyles = makeStyles((theme) => ({
   }, 
 }));
 
-function Icon(props){
-  return <img src={props.name} width="auto" height="auto"/>; 
-}
+//-------------------------------------------------------------
 
 const BackBtn = () => {
   const classes = useBtnStyles();
   const history = useHistory();
 
   return (
-      <IconButton type="submit" className={classes.iconButton} aria-label="search" onClick={() => history.goBack()}>
-        <Icon name={BackIcon}/>
+      <IconButton type="submit" className={classes.iconButton} onClick={() => history.goBack()}>
+        <Icon icon={arrowBack} width="40px" height="40px" style={{ color: "#3F342C" }} />
       </IconButton>
   )
 }

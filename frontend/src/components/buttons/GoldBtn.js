@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button';
 
+//-------------------------------------------------------------
+
 const ColorButton = withStyles((theme) => ({
     root: {
       color: '#FFFFFF',
@@ -16,8 +18,9 @@ const ColorButton = withStyles((theme) => ({
     },
   }))(Button);
 
-//Render the Homepage Header Component
-const GoldBtn = (props) => {
+//-------------------------------------------------------------
+
+export const GoldBtn = (props) => {
   return (
     <ColorButton component={Link} to={props.link} variant="contained" disableElevation>
       {props.name}
