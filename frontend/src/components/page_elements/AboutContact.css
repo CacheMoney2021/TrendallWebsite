@@ -1,0 +1,135 @@
+.aboutInfo{
+    margin-top:10%;
+}
+.divImage{
+    display: flex;
+    padding: 0 10% 0 10%;
+    align-items: center;
+    gap: 80px; 
+}
+.headingOdd {font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    line-height: 2em;
+    color: #3F342C;
+    padding: 0 3%;
+    text-align: center;
+    align-items: center;
+}
+
+.headingEven {font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 2.5em;
+    color: #d6341f;
+    text-align:center;
+    padding: 4%;
+}
+
+.contactInfo{
+    margin-top:10%;
+}
+
+.contactInfo p{
+    font-family: 'Roboto', sans-serif;
+    color: #3F342C;
+}
+
+#imageClass{
+    height: auto; 
+    width: auto; 
+    max-width: 400px; 
+    max-height: 400px;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.25em;
+    color: #3F342C;
+    padding: 3% 0 3% 3%;
+}
+
+.buttonDiv {
+    display: flex;
+    padding: 0 10% 0 10%;
+    align-items: center;
+    gap: 80px; /* row-gap column gap */
+}
+.buttons {
+    width: 30%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}
+.welcomeDiv{
+    position:relative;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcomeDiv h3{
+    margin-top:5%;
+}
+
+.welcomeDiv h3{
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 0 0 5%;
+    color: #3F342C;
+    font-family: 'Roboto', sans-serif;
+}
+.welcomeDiv h1{
+    font-size: 60px;
+    font-weight: 900;
+    color: #d6341f;
+    font-family: 'Roboto', sans-serif;
+    text-align: left;
+    align-items: center;
+
+}
+.buttonDivSm {
+    margin: auto;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vaseDiv p{
+    font-family: 'Roboto', sans-serif;
+    color: #3F342C;
+}
+
+.vaseDiv table {
+    font-family: 'Roboto', sans-serif;
+    color: #3F342C;
+    font-size: 17px;
+}
+.vaseDiv h2 {
+    font-size: 40px;
+    font-weight: 300;
+    padding: 0 0 0 5%;
+    color: #3F342C;
+    font-family: 'Roboto', sans-serif;
+
+}
+.vaseDiv tr{
+    line-height: 1.5em;
+}
+.vaseDiv, th{
+    font-weight:300;
+}
+.vaseDiv td{
+    padding-left: 3%;
+}
+#vaseImage {
+    height: auto; 
+    width: auto; 
+    max-width: 400px; 
+    max-height: 500px;
+}

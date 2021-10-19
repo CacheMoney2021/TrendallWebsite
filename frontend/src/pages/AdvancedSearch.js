@@ -7,10 +7,10 @@ import {
   IconButton,
 } from '@material-ui/core';
 import { PageContainer, Footer, FormDiv } from "../components/page_elements/Div.elements";
-import SearchPageHeader from "../components/page_elements/SearchPageHeader";
-import InfoIcon from '../components/images/infoicon_brown.png';
+import SearchPageHeader from "../components/headers/SearchPageHeader";
 import GoldBtn from "../components/buttons/GoldBtn";
-import {ShapeList, ProvenanceList, CollectionList} from "../components/terms_lists/TermsList"
+import InfoIcon from "../assets/infoicon_brown.png";
+import TermsList from "../components/terms_lists/TermsList"
 
 const TermsDiv = styled(FormDiv)`
     background-color: white;
@@ -63,13 +63,28 @@ const useSearchStyles = makeStyles((theme) => ({
   }
 }));
 
+//--------------------------------------------------------------------------------------------
+
+//Displays a list of searchable terms for each relevant field
 const TermsDictionary = () => {
+  const urlPath = window.location.href;
+  const pathname = urlPath.replace("http://127.0.0.1:8000/advanced-search/?", "");
+  let display = "Terms Dictionary"
+
+  if(pathname === "shape="){
+    display ="Shape Terms"
+  }
+  if(pathname === "col="){
+    display ="Colllection Names"
+  }
+  if(pathname === "prov="){
+    display ="Provenance Names"
+  }
+
   return (
     <TermsDiv>
-      <TermsTitle fontStyle="bold">Shape Terms</TermsTitle>
-      <Terms><ShapeList/></Terms>
-      <Terms><CollectionList/></Terms>
-      <Terms><ProvenanceList/></Terms>
+      <TermsTitle fontStyle="bold">{display}</TermsTitle>
+      <Terms><TermsList name={pathname}/></Terms>
     </TermsDiv>
   )
 }
@@ -84,21 +99,20 @@ const FieldSearch = (props) => {
 
   return (
     <div>
-    <Paper component="form" elevation={0} className={classes.root}>
-      <FieldTitle>{props.title}</FieldTitle>
-      <Input 
-        placeholder={props.placeholder}
-        name={props.name} 
-        value={props.value}
-        onChange={props.onChange}
-        fullWidth  
-      />
-      
-      <IconButton type="submit" className={classes.iconButton} onClick={()=>{ alert('alert'); }}>
-        <Icon name={InfoIcon}/>
-      </IconButton>
+      <Paper component="form" elevation={0} className={classes.root}>
+        <FieldTitle>{props.title}</FieldTitle>
+        <Input 
+          placeholder={props.placeholder}
+          name={props.name} 
+          value={props.value}
+          onChange={props.onChange}
+          fullWidth  
+        />
+        <IconButton type="submit" className={classes.iconButton}>
+          <Icon name={InfoIcon}/>
+        </IconButton> 
       </Paper>
-      </div>
+    </div>
   )
 }
 
@@ -142,7 +156,6 @@ const AdvancedForm = () => {
     if(state.prov){
       param = param + "&provenanceName=" + state.prov;
     }
-
     return(param);
   }
 
@@ -159,14 +172,14 @@ const AdvancedForm = () => {
       <AdvancedSearchTitle>Advanced Search</AdvancedSearchTitle>
 
       {/*Component that displays each 'Field Line' in the Advanced Search Form. E.g. Vase Number: Enter here (InfoIcon).*/}
-      <FieldSearch name= 'ref'     value={state.ref}     onChange={handleChange}  placeholder= "Type Vase Reference No."  title= 'Vase Reference' />
-      <FieldSearch name= 'shape'   value={state.shape}   onChange={handleChange}  placeholder= "Enter Shape Name"         title= 'Shape' />
+      <FieldSearch name= 'ref'     value={state.ref}     onChange={handleChange}  placeholder= "Type Vase Reference No."  title= 'Vase Reference'/>
+      <FieldSearch name= 'shape'   value={state.shape}   onChange={handleChange}  placeholder= "Enter Shape Name"         title= 'Shape' hasInfo='yes'/>
       <FieldSearch name= 'fabric'  value={state.fabric}  onChange={handleChange}  placeholder= "Enter Fabric Name"        title= 'Fabric' />
       <FieldSearch name= 'artist'  value={state.artist}  onChange={handleChange}  placeholder= "Enter Artist Name"        title= 'Artist' />
       <FieldSearch name= 'subject' value={state.subject} onChange={handleChange}  placeholder= "Enter Vase Decription"    title= 'Subject' />
       <FieldSearch name= 'pub'     value={state.pub}     onChange={handleChange}  placeholder= "Enter Publication Name"   title= 'Publication Name' />
-      <FieldSearch name= 'col'     value={state.col}     onChange={handleChange}  placeholder= "Enter Collection Name"    title= 'Collection Name' />
-      <FieldSearch name= 'prov'    value={state.prov}    onChange={handleChange}  placeholder= "Enter Provenance Name"    title= 'Provenance' />
+      <FieldSearch name= 'col'     value={state.col}     onChange={handleChange}  placeholder= "Enter Collection Name"    title= 'Collection Name' hasInfo='yes'/>
+      <FieldSearch name= 'prov'    value={state.prov}    onChange={handleChange}  placeholder= "Enter Provenance Name"    title= 'Provenance' hasInfo='yes'/>
 
       {/*Search Button*/}
       <br/><GoldBtn width='100%' name="Search" link={UrlParam}/>
@@ -176,22 +189,22 @@ const AdvancedForm = () => {
 
 //Render the Advanced Search Page.
 export default class AdvancedSearch extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-  
-    render() {
-      return(
-        <div>
-          <SearchPageHeader/>
-            <PageContainer>
-              <AdvancedForm/>
-              <TermsDictionary/>
-            </PageContainer>
-          <Footer/>
-        </div>
-      ); 
-    }
+  constructor(props) {
+    super(props);
   }
+
+  render() {
+    return(
+      <div>
+        <SearchPageHeader/>
+          <PageContainer>
+            <AdvancedForm/>
+            <TermsDictionary/>
+          </PageContainer>
+        <Footer/>
+      </div>
+    ); 
+  }
+}
 
 
