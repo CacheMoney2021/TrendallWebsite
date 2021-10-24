@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Building from "../assets/center.jpeg";
 import { Footer } from "../components/page_elements/Div.elements";
 
+//--------------------------------------------------------------------------------------------
+
 const Container = styled.div`
    justify-content: center;
    align-items: center;
@@ -14,7 +16,9 @@ const Wrap = styled.div`
     align-items: center;
 `
 
-//class to render all components for the About page
+//--------------------------------------------------------------------------------------------
+
+//Class to render all components for the About page
 export default class Contact extends React.Component {
     constructor(props) {
       super(props);

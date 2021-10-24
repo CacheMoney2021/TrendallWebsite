@@ -15,59 +15,58 @@
     width: 480px;
   }
   
- li {
-    display: inline-block;
-    /*width: 100px;*/
-    cursor: pointer;
-  }
-  
-  .img-gallery .thumb {
-    height: 100px;
-    margin: 0 5px 0 auto;
-    text-align: center;
-  }
-  
-  .img-gallery .chevLeft {
-    float: left;
-    font-size: 35px;
-    margin-top: 22px;
-    cursor: pointer;
-  }
-  
-  .img-gallery .chevRight {
-    float: right;
-    font-size: 35px;
-    margin-top: 22px;
-    cursor: pointer;
-  }
-  
-  .img-gallery ul.alice-carousel__dots {
-    margin: 5px auto;
-    overflow: hidden;
-  }
-  
-  .img-gallery .modal {
-    position: fixed;
-    display: flex;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-  }
-  
-  .img-gallery .hide {
-    display: none;
-  }
-  
-  .img-gallery button {
-    display: block;
-    margin: 5px auto;
-  }
-  
-  .img-gallery .thumb-list {
-    height: 150px;
-  }
+li {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.img-gallery .thumb {
+  height: 100px;
+  margin: 0 5px 0 auto;
+  text-align: center;
+}
+
+.img-gallery .chevLeft {
+  float: left;
+  font-size: 35px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.img-gallery .chevRight {
+  float: right;
+  font-size: 35px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+
+.img-gallery ul.alice-carousel__dots {
+  margin: 5px auto;
+  overflow: hidden;
+}
+
+.img-gallery .modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.img-gallery .hide {
+  display: none;
+}
+
+.img-gallery button {
+  display: block;
+  margin: 5px auto;
+}
+
+.img-gallery .thumb-list {
+  height: 150px;
+}

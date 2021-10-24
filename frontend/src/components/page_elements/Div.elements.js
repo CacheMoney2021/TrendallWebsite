@@ -28,3 +28,8 @@ export const FormDiv = styled.div`
     margin-bottom:15px;
     padding: 45px;
 `
+
+//A function to take in the name of an imported image and return it as a styled image
+export function Icon(props){
+    return <img src={props.name} width="auto" height="35px"/>; 
+}

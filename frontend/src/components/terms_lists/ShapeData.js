@@ -80,6 +80,7 @@ export const shapeData = [
     {shape: "Bowl fragment",},
     {shape: "Bowl fragments",},
     {shape: "Brazier",},
+    {shape: "Calyx-krater",},
     {shape: "Calyx-kraters",},
     {shape: "Canopic jar",},
     {shape: "Chalice",},

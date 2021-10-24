@@ -1,13 +1,15 @@
 import React, { useEffect,useState } from "react";
 import axios from 'axios';
-import "../page_elements/SearchResults.css";
 import VasePreview from "./VasePreview";
 import { CircularProgress, Box } from '@mui/material';
 import BackBtn from "../buttons/BackBtn";
+import "../page_elements/SearchResults.css";
 
 //-------------------------------------------------------------
 
 const SearchResults = () => {
+
+    //API to query the database and return search results
     const [Data, setData] = useState([])
 
     const urlPath = window.location.href;
@@ -24,12 +26,14 @@ const SearchResults = () => {
           })
     },[])
 
+    //Loading Screen while the API is called. 
     const Loading = () => {
         const [found, setFound] = useState(true)
         const timer = setTimeout(() => {
             setFound(false)
         }, 3000)
 
+        //If API returns a result, finish the timeout of Loading Animation
         if (found){
             return (
                 <Box sx={{ color: '#DAA844', display: 'flex', justifyContent: 'center', marginTop: '20%' }}>
@@ -37,6 +41,8 @@ const SearchResults = () => {
                 </Box>
             )
         }
+
+        //If API returns no results, display 'No Vases Found' Page
         if (!found){
             return (    
                 <Box sx={{ color: '#DAA844', display: 'flex', justifyContent: 'center', marginTop: '20%' }}>
@@ -49,12 +55,16 @@ const SearchResults = () => {
         }
     }
 
+    //Display Search Results
     const ResultsFound = () => {
         return (
-            <div>
+            <>
+                {/*Display Search Results Title with number of vases found*/}
                 <div style={{ display:'flex', justifyContent:"center", fontStyle:"normal", fontSize:"19px", paddingBottom:"20px", color: "#3F342C", letterSpacing:"1px" }}>
                     Search Results ({Data.length !== 0 ? Data.length : 0}) 
                 </div>
+
+                {/*Vase Result Card*/}
                 <ul className="card-grid">
                     {Data.map((item) => (
                         <li>
@@ -77,10 +87,11 @@ const SearchResults = () => {
                         </li>
                     ))}
                 </ul>
-            </div>              
+            </>              
         )
     }
 
+    //While the API is being called, display Loading Screen. If the API returns with vases, display Search Results.
     return (
         <div className="wrapper">
             {Data.length === 0 ? 

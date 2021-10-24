@@ -9,14 +9,20 @@ import VaseImage from '../components/view_vase/VaseImage';
 import BackIcon from '../assets/backarrow_white.png';
 import { Link } from 'react-router-dom';
 
+//--------------------------------------------------------------------------------------------
+
 const VaseWrapper = styled(PageContainer)`
   margin-top: 70px;
 `
 
+//--------------------------------------------------------------------------------------------
+
+//A function to take in the name of an imported image and return it as a styled image
 function Icon(props){
   return <img src={props.name} width="auto" height="35px"/>; 
 }
 
+//Render View Vase Page
 export default class ViewVase extends React.Component {
     constructor(props) {
       super(props);

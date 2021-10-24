@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
 import HomepageHeader from "../components/headers/HomepageHeader";
-import SearchWithDropdown from "../components/search_elements/SearchWithDropdown";
-import { PageContainer, Footer } from "../components/page_elements/Div.elements";
+import BasicSearchBar from "../components/search_elements/BasicSearchBar";
+import { Footer } from "../components/page_elements/Div.elements";
 import BannerVaseImage from '../assets/basicsearchimage.png';
 import GoldBtn from "../components/buttons/GoldBtn";
 import Welcome from "../components/Welcome";
+
+//--------------------------------------------------------------------------------------------
 
 const BasicSearchBanner = styled.div`
     width: 100%;
@@ -38,10 +40,14 @@ const AdvancedSearchDiv = styled.div`
     display: flex;
     padding-left: 1.5%;
 `
+
+//--------------------------------------------------------------------------------------------
+
+//Render all components that make up the Basic Search Bar
 const SearchBarComps = () => {
   return (
     <SearchBarDiv>
-      <SearchWithDropdown/>
+      <BasicSearchBar/>
       <AdvancedSearchDiv>
         <GoldBtn name="Go To Advanced Search" link="/advanced-search"/>
       </AdvancedSearchDiv>

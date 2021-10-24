@@ -31,6 +31,22 @@ export const SearchHeader = styled(Header)`
     z-index: 1;
 `
 
+//Home Link Div for the Homepage Header
+export const HomeLink = styled.div`
+    width: 225px;
+    height: 65px;
+    margin: 5px 15px 5px 10px;
+    top: 0px;
+    position: relative;
+    left: -225px;
+`
+
+//Home Link Div for the Search Page Header
+export const HomepageLink = styled(HomeLink)`
+    position: relative;
+    left: -225px;
+`
+
 //A <ul> container for right aligned navigation with text links and icons.
 export const NavBar = styled.ul`
     list-style: none;

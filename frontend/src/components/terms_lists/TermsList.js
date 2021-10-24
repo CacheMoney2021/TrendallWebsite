@@ -3,8 +3,21 @@ import { shapeData } from "./ShapeData";
 import { provData } from "./ProvenanceData";
 import { colData } from "./CollectionData";
 
+//-------------------------------------------------------------
+
 export const TermsList = (props) => {
-    if(props.name === "shape="){
+    //Return Vase Reference Term Dictionary
+    if(props.name === "ref"){
+        return (
+            <div>
+                Vase Reference Convention: [ Part 1, 2 or 3 in RVP ] - [ ID in RVP ]<br/><br/>
+                For example: 2-238
+            </div>
+        )
+    }
+
+    //Return Shape Term Dictionary
+    if(props.name === "shape"){
         return (
             <div>
                 {shapeData.map((data) => {
@@ -15,7 +28,36 @@ export const TermsList = (props) => {
             </div>
         )
     }
-    if(props.name === "col="){
+
+    //Return Fabric Term Dictionary
+    if(props.name === "fabric"){
+        return (
+            <div>
+                Currently Not Implemented
+            </div>
+        )
+    }
+
+    //Return Subject Dictionary
+    if(props.name === "subject"){
+        return (
+            <div>
+                Search by any keyword and the database will find references to the subject with partial matching
+            </div>
+        )
+    }
+
+    //Return Publication Term Dictionary
+    if(props.name === "pub"){
+        return (
+            <div>
+                Currently Not Implemented
+            </div>
+        )
+    }
+
+    //Return Collection Term Dictionary
+    if(props.name === "col"){
         return (
             <div>
                 {colData.map((data) => {
@@ -26,7 +68,9 @@ export const TermsList = (props) => {
             </div>
         )
     }
-    if(props.name === "prov="){
+
+    //Return Provenance Term Dictionary
+    if(props.name === "prov"){
         return (
             <div>
                 {provData.map((data) => {
@@ -37,6 +81,8 @@ export const TermsList = (props) => {
             </div>
         )
     }
+
+    //Return Term Dictionary preliminary information
     else{
         return (
             <div>

@@ -22,7 +22,7 @@ const ColorButton = withStyles((theme) => ({
 
 export const GoldBtn = (props) => {
   return (
-    <ColorButton component={Link} to={props.link} variant="contained" disableElevation>
+    <ColorButton component={Link} to={props.link} variant="contained" onClick={props.onClick} disableElevation>
       {props.name}
     </ColorButton>
   )

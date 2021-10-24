@@ -1,23 +1,26 @@
-//This component takes the vaseRef parameter from the URL, sends it in the API call
-//consume the JSON response and prints the data for this particular vase
 import React,{useEffect,useState} from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
-const FormDiv = styled.div`
+//-------------------------------------------------------------
+
+const VaseDiv = styled.div`
     width: 100%;
     height: 100%;
     right: 0px;
     padding:4%;
     display: absolute;
 `
-//takes vaseRef parameter from the URL to pass into API below
+
+//-------------------------------------------------------------
+
+//Takes vaseRef parameter from the URL to pass into API below
 const urlParams = new URLSearchParams(window.location.search);
 const vaseRef = urlParams.get('vaseRef');
 console.log(vaseRef);
-//function to call and consume the API
+
+//Function to call and consume the API for the particular vase
 const Vase=()=>{
-    
     const [Data,setData]=useState({
         VaseRef:'',
         Fabric:'',
@@ -31,8 +34,10 @@ const Vase=()=>{
         Shape:'',
         Provenance:''
     })
+
     useEffect(()=>{
-        axios.get(`http://127.0.0.1:8000/api/getthevase/?vaseRef=${vaseRef}`)//get the selected vase using the vaseRef passed through the URL
+        //Get the selected vase using the vaseRef passed through the URL
+        axios.get(`http://127.0.0.1:8000/api/getthevase/?vaseRef=${vaseRef}`)
             .then(res=>{
                 console.log({vaseRef})
                 console.log('Response from main API: ',res) //printing the response to the console for debugging
@@ -44,10 +49,10 @@ const Vase=()=>{
             })
     },[])
 
-//return and display the vase information that was retrieved in the function
+//Return and display the vase information that was retrieved in the function
     return(
         <>    
-        <FormDiv>
+        <VaseDiv>
             <div className = "vaseDiv">
                 <h2>RVP no. {Data.VaseRef}, {Data.Collection ?  Data.Collection : "Collection Not Found"}</h2>
             <tbody>
@@ -83,7 +88,7 @@ const Vase=()=>{
             </table>
             </tbody>
             </div>
-        </FormDiv>
+        </VaseDiv>
         </>
     )
 }
