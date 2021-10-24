@@ -17,10 +17,16 @@ npm install
 ### Running the code:
 
 Run on the local host
-```py manage.py runserver```
+```
+py manage.py runserver
+```
 
 Build the Web App
-```npm run build```
+```
+npm run build
+```
 
 Run while in development mode
-```npm run dev```
+```
+npm run dev
+```
