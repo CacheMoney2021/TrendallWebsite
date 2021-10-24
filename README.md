@@ -3,8 +3,7 @@ This is a web app created for the Trendall Research Centre, to view digitized va
 records extracted from paper based records and imported into a database. 
 
 ## Authors
-Emily O'Keefe 
-Mars Dizon
+Emily O'Keefe, Mars Dizon
 
 ## Usage
 ### To set up the environment:
